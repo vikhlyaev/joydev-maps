@@ -8,22 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		0A9DA78D2ABC60AB0021A8B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA78C2ABC60AB0021A8B1 /* AppDelegate.swift */; };
-		0A9DA78F2ABC60AB0021A8B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA78E2ABC60AB0021A8B1 /* SceneDelegate.swift */; };
-		0A9DA7912ABC60AB0021A8B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7902ABC60AB0021A8B1 /* ViewController.swift */; };
-		0A9DA7942ABC60AB0021A8B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DA7922ABC60AB0021A8B1 /* Main.storyboard */; };
 		0A9DA7962ABC60AD0021A8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DA7952ABC60AD0021A8B1 /* Assets.xcassets */; };
 		0A9DA7992ABC60AD0021A8B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DA7972ABC60AD0021A8B1 /* LaunchScreen.storyboard */; };
+		0A9DA7AD2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift */; };
+		0A9DA7AF2ABC65C30021A8B1 /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7AE2ABC65C30021A8B1 /* PlaceDetailsViewController.swift */; };
+		0A9DA7B12ABC65EB0021A8B1 /* PlaceDetailsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B02ABC65EB0021A8B1 /* PlaceDetailsInput.swift */; };
+		0A9DA7B32ABC65F20021A8B1 /* PlaceDetailsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B22ABC65F20021A8B1 /* PlaceDetailsOutput.swift */; };
+		0A9DA7B52ABC66160021A8B1 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B42ABC66160021A8B1 /* MapPresenter.swift */; };
+		0A9DA7B72ABC66220021A8B1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B62ABC66220021A8B1 /* MapViewController.swift */; };
+		0A9DA7B92ABC662E0021A8B1 /* MapInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B82ABC662E0021A8B1 /* MapInput.swift */; };
+		0A9DA7BB2ABC66350021A8B1 /* MapOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7BA2ABC66350021A8B1 /* MapOutput.swift */; };
+		0A9DA7BD2ABC66440021A8B1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7BC2ABC66440021A8B1 /* AuthPresenter.swift */; };
+		0A9DA7BF2ABC664B0021A8B1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */; };
+		0A9DA7C12ABC66500021A8B1 /* AuthInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C02ABC66500021A8B1 /* AuthInput.swift */; };
+		0A9DA7C32ABC66570021A8B1 /* AuthOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C22ABC66570021A8B1 /* AuthOutput.swift */; };
+		0A9DA7C82ABC66A30021A8B1 /* ScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */; };
+		0A9DA7CA2ABC66C80021A8B1 /* ScreenAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C92ABC66C80021A8B1 /* ScreenAssemblyImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A9DA7892ABC60AB0021A8B1 /* Joy Dev Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Joy Dev Maps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9DA78C2ABC60AB0021A8B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A9DA78E2ABC60AB0021A8B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A9DA7902ABC60AB0021A8B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A9DA7932ABC60AB0021A8B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A9DA7952ABC60AD0021A8B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9DA7982ABC60AD0021A8B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9DA79A2ABC60AD0021A8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A9DA7A02ABC61150021A8B1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		0A9DA7A12ABC611F0021A8B1 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsPresenter.swift; sourceTree = "<group>"; };
+		0A9DA7AE2ABC65C30021A8B1 /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
+		0A9DA7B02ABC65EB0021A8B1 /* PlaceDetailsInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsInput.swift; sourceTree = "<group>"; };
+		0A9DA7B22ABC65F20021A8B1 /* PlaceDetailsOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsOutput.swift; sourceTree = "<group>"; };
+		0A9DA7B42ABC66160021A8B1 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		0A9DA7B62ABC66220021A8B1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0A9DA7B82ABC662E0021A8B1 /* MapInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInput.swift; sourceTree = "<group>"; };
+		0A9DA7BA2ABC66350021A8B1 /* MapOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOutput.swift; sourceTree = "<group>"; };
+		0A9DA7BC2ABC66440021A8B1 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		0A9DA7C02ABC66500021A8B1 /* AuthInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInput.swift; sourceTree = "<group>"; };
+		0A9DA7C22ABC66570021A8B1 /* AuthOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOutput.swift; sourceTree = "<group>"; };
+		0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAssembly.swift; sourceTree = "<group>"; };
+		0A9DA7C92ABC66C80021A8B1 /* ScreenAssemblyImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAssemblyImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				0A9DA78B2ABC60AB0021A8B1 /* Joy Dev Maps */,
+				0A9DA7A12ABC611F0021A8B1 /* Secrets.xcconfig */,
+				0A9DA7A02ABC61150021A8B1 /* Config.xcconfig */,
 				0A9DA78A2ABC60AB0021A8B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +82,106 @@
 		0A9DA78B2ABC60AB0021A8B1 /* Joy Dev Maps */ = {
 			isa = PBXGroup;
 			children = (
-				0A9DA78C2ABC60AB0021A8B1 /* AppDelegate.swift */,
-				0A9DA78E2ABC60AB0021A8B1 /* SceneDelegate.swift */,
-				0A9DA7902ABC60AB0021A8B1 /* ViewController.swift */,
-				0A9DA7922ABC60AB0021A8B1 /* Main.storyboard */,
+				0A9DA7A42ABC63770021A8B1 /* App */,
+				0A9DA7C62ABC66930021A8B1 /* Assembly */,
+				0A9DA7A72ABC63A30021A8B1 /* Core */,
+				0A9DA7A52ABC637F0021A8B1 /* Screens */,
+				0A9DA7A62ABC63930021A8B1 /* Services */,
+				0A9DA7A22ABC63120021A8B1 /* Resources */,
+				0A9DA7A32ABC636C0021A8B1 /* Supporting Files */,
+			);
+			path = "Joy Dev Maps";
+			sourceTree = "<group>";
+		};
+		0A9DA7A22ABC63120021A8B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				0A9DA7952ABC60AD0021A8B1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0A9DA7A32ABC636C0021A8B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				0A9DA7972ABC60AD0021A8B1 /* LaunchScreen.storyboard */,
 				0A9DA79A2ABC60AD0021A8B1 /* Info.plist */,
 			);
-			path = "Joy Dev Maps";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A9DA7A42ABC63770021A8B1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA78C2ABC60AB0021A8B1 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0A9DA7A52ABC637F0021A8B1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7AA2ABC65570021A8B1 /* PlaceDetails */,
+				0A9DA7A92ABC64D70021A8B1 /* Map */,
+				0A9DA7A82ABC64C70021A8B1 /* Auth */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0A9DA7A62ABC63930021A8B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0A9DA7A72ABC63A30021A8B1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0A9DA7A82ABC64C70021A8B1 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7BC2ABC66440021A8B1 /* AuthPresenter.swift */,
+				0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */,
+				0A9DA7C02ABC66500021A8B1 /* AuthInput.swift */,
+				0A9DA7C22ABC66570021A8B1 /* AuthOutput.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		0A9DA7A92ABC64D70021A8B1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7B42ABC66160021A8B1 /* MapPresenter.swift */,
+				0A9DA7B62ABC66220021A8B1 /* MapViewController.swift */,
+				0A9DA7B82ABC662E0021A8B1 /* MapInput.swift */,
+				0A9DA7BA2ABC66350021A8B1 /* MapOutput.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		0A9DA7AA2ABC65570021A8B1 /* PlaceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift */,
+				0A9DA7AE2ABC65C30021A8B1 /* PlaceDetailsViewController.swift */,
+				0A9DA7B02ABC65EB0021A8B1 /* PlaceDetailsInput.swift */,
+				0A9DA7B22ABC65F20021A8B1 /* PlaceDetailsOutput.swift */,
+			);
+			path = PlaceDetails;
+			sourceTree = "<group>";
+		};
+		0A9DA7C62ABC66930021A8B1 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */,
+				0A9DA7C92ABC66C80021A8B1 /* ScreenAssemblyImpl.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +244,6 @@
 			files = (
 				0A9DA7992ABC60AD0021A8B1 /* LaunchScreen.storyboard in Resources */,
 				0A9DA7962ABC60AD0021A8B1 /* Assets.xcassets in Resources */,
-				0A9DA7942ABC60AB0021A8B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +254,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9DA7912ABC60AB0021A8B1 /* ViewController.swift in Sources */,
+				0A9DA7C32ABC66570021A8B1 /* AuthOutput.swift in Sources */,
+				0A9DA7AD2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift in Sources */,
+				0A9DA7B92ABC662E0021A8B1 /* MapInput.swift in Sources */,
+				0A9DA7B52ABC66160021A8B1 /* MapPresenter.swift in Sources */,
+				0A9DA7BB2ABC66350021A8B1 /* MapOutput.swift in Sources */,
+				0A9DA7C12ABC66500021A8B1 /* AuthInput.swift in Sources */,
+				0A9DA7BF2ABC664B0021A8B1 /* AuthViewController.swift in Sources */,
+				0A9DA7BD2ABC66440021A8B1 /* AuthPresenter.swift in Sources */,
+				0A9DA7AF2ABC65C30021A8B1 /* PlaceDetailsViewController.swift in Sources */,
+				0A9DA7B12ABC65EB0021A8B1 /* PlaceDetailsInput.swift in Sources */,
 				0A9DA78D2ABC60AB0021A8B1 /* AppDelegate.swift in Sources */,
-				0A9DA78F2ABC60AB0021A8B1 /* SceneDelegate.swift in Sources */,
+				0A9DA7C82ABC66A30021A8B1 /* ScreenAssembly.swift in Sources */,
+				0A9DA7CA2ABC66C80021A8B1 /* ScreenAssemblyImpl.swift in Sources */,
+				0A9DA7B32ABC65F20021A8B1 /* PlaceDetailsOutput.swift in Sources */,
+				0A9DA7B72ABC66220021A8B1 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0A9DA7922ABC60AB0021A8B1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A9DA7932ABC60AB0021A8B1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0A9DA7972ABC60AD0021A8B1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,12 +414,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VEWJJ8ZGBW;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Joy Dev Maps/Info.plist";
+				INFOPLIST_FILE = "Joy Dev Maps/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +426,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.vikhlyaev.Joy-Dev-Maps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,12 +444,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VEWJJ8ZGBW;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Joy Dev Maps/Info.plist";
+				INFOPLIST_FILE = "Joy Dev Maps/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +456,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.vikhlyaev.Joy-Dev-Maps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
