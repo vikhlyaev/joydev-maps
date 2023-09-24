@@ -11,12 +11,12 @@ final class PlaceDetailsViewController: UIViewController {
     
     // MARK: Properties
     
-    private let presenter: PlaceDetailsOutput
+    private let viewModel: PlaceDetailsOutput
     
     // MARK: Life Cycle
     
-    init(presenter: PlaceDetailsOutput) {
-        self.presenter = presenter
+    init(viewModel: PlaceDetailsOutput) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,7 +28,6 @@ final class PlaceDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setConstraints()
-        presenter.viewIsReady()
     }
     
     // MARK: Setup UI
@@ -38,16 +37,10 @@ final class PlaceDetailsViewController: UIViewController {
     }
 }
 
-// MARK: - PlaceDetailsInput
-
-extension PlaceDetailsViewController: PlaceDetailsInput {
-    
-}
-
 // MARK: - Setting Constraints
 
-extension PlaceDetailsViewController {
-    private func setConstraints() {
+private extension PlaceDetailsViewController {
+    func setConstraints() {
         NSLayoutConstraint.activate([
             
         ])

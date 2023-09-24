@@ -6,17 +6,27 @@
 //
 
 import UIKit
+import MapKit
 
 final class MapViewController: UIViewController {
     
+    // MARK: UI
+    
+    private lazy var map: MKMapView = {
+        let map = MKMapView()
+        map.showsUserLocation = true
+        map.translatesAutoresizingMaskIntoConstraints = false
+        return map
+    }()
+    
     // MARK: Properties
     
-    private let presenter: MapOutput
+    private let viewModel: MapOutput
     
     // MARK: Life Cycle
     
-    init(presenter: MapOutput) {
-        self.presenter = presenter
+    init(viewModel: MapOutput) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,21 +44,19 @@ final class MapViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .systemBlue
+        view.addSubview(map)
     }
-}
-
-// MARK: - MapInput
-
-extension MapViewController: MapInput {
-    
 }
 
 // MARK: - Setting Constraints
 
-extension MapViewController {
-    private func setConstraints() {
+private extension MapViewController {
+    func setConstraints() {
         NSLayoutConstraint.activate([
-            
+            map.topAnchor.constraint(equalTo: view.topAnchor),
+            map.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            map.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            map.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }

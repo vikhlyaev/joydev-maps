@@ -10,20 +10,21 @@
 		0A9DA78D2ABC60AB0021A8B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA78C2ABC60AB0021A8B1 /* AppDelegate.swift */; };
 		0A9DA7962ABC60AD0021A8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DA7952ABC60AD0021A8B1 /* Assets.xcassets */; };
 		0A9DA7992ABC60AD0021A8B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DA7972ABC60AD0021A8B1 /* LaunchScreen.storyboard */; };
-		0A9DA7AD2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift */; };
+		0A9DA7AD2ABC658C0021A8B1 /* PlaceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsViewModel.swift */; };
 		0A9DA7AF2ABC65C30021A8B1 /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7AE2ABC65C30021A8B1 /* PlaceDetailsViewController.swift */; };
-		0A9DA7B12ABC65EB0021A8B1 /* PlaceDetailsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B02ABC65EB0021A8B1 /* PlaceDetailsInput.swift */; };
-		0A9DA7B32ABC65F20021A8B1 /* PlaceDetailsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B22ABC65F20021A8B1 /* PlaceDetailsOutput.swift */; };
-		0A9DA7B52ABC66160021A8B1 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B42ABC66160021A8B1 /* MapPresenter.swift */; };
+		0A9DA7B52ABC66160021A8B1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B42ABC66160021A8B1 /* MapViewModel.swift */; };
 		0A9DA7B72ABC66220021A8B1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B62ABC66220021A8B1 /* MapViewController.swift */; };
-		0A9DA7B92ABC662E0021A8B1 /* MapInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7B82ABC662E0021A8B1 /* MapInput.swift */; };
-		0A9DA7BB2ABC66350021A8B1 /* MapOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7BA2ABC66350021A8B1 /* MapOutput.swift */; };
-		0A9DA7BD2ABC66440021A8B1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7BC2ABC66440021A8B1 /* AuthPresenter.swift */; };
 		0A9DA7BF2ABC664B0021A8B1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */; };
-		0A9DA7C12ABC66500021A8B1 /* AuthInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C02ABC66500021A8B1 /* AuthInput.swift */; };
-		0A9DA7C32ABC66570021A8B1 /* AuthOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C22ABC66570021A8B1 /* AuthOutput.swift */; };
+		0A9DA7C32ABC66570021A8B1 /* AuthConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C22ABC66570021A8B1 /* AuthConstants.swift */; };
 		0A9DA7C82ABC66A30021A8B1 /* ScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */; };
-		0A9DA7CA2ABC66C80021A8B1 /* ScreenAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C92ABC66C80021A8B1 /* ScreenAssemblyImpl.swift */; };
+		0A9DA7CE2ABC8B090021A8B1 /* PlaceDetailsContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsContants.swift */; };
+		0A9DA7D02ABC8B100021A8B1 /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7CF2ABC8B100021A8B1 /* MapConstants.swift */; };
+		0A9DA7D62ABCB06C0021A8B1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7D52ABCB06C0021A8B1 /* NetworkService.swift */; };
+		0A9DA7DC2ABD50E10021A8B1 /* AuthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7DB2ABD50E10021A8B1 /* AuthCell.swift */; };
+		0A9DA7E42ABD562C0021A8B1 /* CellsReusingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7E32ABD562C0021A8B1 /* CellsReusingUtils.swift */; };
+		0A9DA7E62ABD58990021A8B1 /* AuthParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7E02ABD53120021A8B1 /* AuthParameters.swift */; };
+		0A9DA7EC2ABD92F30021A8B1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7EB2ABD92F30021A8B1 /* AuthViewModel.swift */; };
+		0A9DA7F42ABD96370021A8B1 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7F32ABD96370021A8B1 /* Dynamic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,20 +35,21 @@
 		0A9DA79A2ABC60AD0021A8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A9DA7A02ABC61150021A8B1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		0A9DA7A12ABC611F0021A8B1 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
-		0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsPresenter.swift; sourceTree = "<group>"; };
+		0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewModel.swift; sourceTree = "<group>"; };
 		0A9DA7AE2ABC65C30021A8B1 /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
-		0A9DA7B02ABC65EB0021A8B1 /* PlaceDetailsInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsInput.swift; sourceTree = "<group>"; };
-		0A9DA7B22ABC65F20021A8B1 /* PlaceDetailsOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsOutput.swift; sourceTree = "<group>"; };
-		0A9DA7B42ABC66160021A8B1 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		0A9DA7B42ABC66160021A8B1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		0A9DA7B62ABC66220021A8B1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		0A9DA7B82ABC662E0021A8B1 /* MapInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInput.swift; sourceTree = "<group>"; };
-		0A9DA7BA2ABC66350021A8B1 /* MapOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOutput.swift; sourceTree = "<group>"; };
-		0A9DA7BC2ABC66440021A8B1 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		0A9DA7C02ABC66500021A8B1 /* AuthInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInput.swift; sourceTree = "<group>"; };
-		0A9DA7C22ABC66570021A8B1 /* AuthOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOutput.swift; sourceTree = "<group>"; };
+		0A9DA7C22ABC66570021A8B1 /* AuthConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConstants.swift; sourceTree = "<group>"; };
 		0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAssembly.swift; sourceTree = "<group>"; };
-		0A9DA7C92ABC66C80021A8B1 /* ScreenAssemblyImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAssemblyImpl.swift; sourceTree = "<group>"; };
+		0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsContants.swift; sourceTree = "<group>"; };
+		0A9DA7CF2ABC8B100021A8B1 /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
+		0A9DA7D52ABCB06C0021A8B1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0A9DA7DB2ABD50E10021A8B1 /* AuthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCell.swift; sourceTree = "<group>"; };
+		0A9DA7E02ABD53120021A8B1 /* AuthParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthParameters.swift; sourceTree = "<group>"; };
+		0A9DA7E32ABD562C0021A8B1 /* CellsReusingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsReusingUtils.swift; sourceTree = "<group>"; };
+		0A9DA7EB2ABD92F30021A8B1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		0A9DA7F32ABD96370021A8B1 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9A02242AC0026800271293 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7CF2ABC8B100021A8B1 /* MapConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0A9A02252AC002EE00271293 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7B42ABC66160021A8B1 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A9A02262AC002FF00271293 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7B62ABC66220021A8B1 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A9A02272AC0045800271293 /* Contants */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsContants.swift */,
+			);
+			path = Contants;
+			sourceTree = "<group>";
+		};
+		0A9A02282AC0046800271293 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A9A02292AC0049900271293 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7AE2ABC65C30021A8B1 /* PlaceDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0A9DA7802ABC60AB0021A8B1 = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +135,12 @@
 				0A9DA7A42ABC63770021A8B1 /* App */,
 				0A9DA7C62ABC66930021A8B1 /* Assembly */,
 				0A9DA7A72ABC63A30021A8B1 /* Core */,
+				0A9DA7DD2ABD529D0021A8B1 /* Models */,
 				0A9DA7A52ABC637F0021A8B1 /* Screens */,
 				0A9DA7A62ABC63930021A8B1 /* Services */,
 				0A9DA7A22ABC63120021A8B1 /* Resources */,
+				0A9DA7F52ABD963C0021A8B1 /* Helpers */,
+				0A9DA7E22ABD55700021A8B1 /* Extensions */,
 				0A9DA7A32ABC636C0021A8B1 /* Supporting Files */,
 			);
 			path = "Joy Dev Maps";
@@ -121,9 +174,9 @@
 		0A9DA7A52ABC637F0021A8B1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0A9DA7AA2ABC65570021A8B1 /* PlaceDetails */,
-				0A9DA7A92ABC64D70021A8B1 /* Map */,
 				0A9DA7A82ABC64C70021A8B1 /* Auth */,
+				0A9DA7A92ABC64D70021A8B1 /* Map */,
+				0A9DA7AA2ABC65570021A8B1 /* PlaceDetails */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -138,6 +191,7 @@
 		0A9DA7A72ABC63A30021A8B1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0A9DA7D52ABCB06C0021A8B1 /* NetworkService.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -145,10 +199,9 @@
 		0A9DA7A82ABC64C70021A8B1 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				0A9DA7BC2ABC66440021A8B1 /* AuthPresenter.swift */,
-				0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */,
-				0A9DA7C02ABC66500021A8B1 /* AuthInput.swift */,
-				0A9DA7C22ABC66570021A8B1 /* AuthOutput.swift */,
+				0A9DA7F22ABD943D0021A8B1 /* Constants */,
+				0A9DA7F12ABD942D0021A8B1 /* ViewModel */,
+				0A9DA7F02ABD94260021A8B1 /* View */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -156,10 +209,9 @@
 		0A9DA7A92ABC64D70021A8B1 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				0A9DA7B42ABC66160021A8B1 /* MapPresenter.swift */,
-				0A9DA7B62ABC66220021A8B1 /* MapViewController.swift */,
-				0A9DA7B82ABC662E0021A8B1 /* MapInput.swift */,
-				0A9DA7BA2ABC66350021A8B1 /* MapOutput.swift */,
+				0A9A02242AC0026800271293 /* Constants */,
+				0A9A02252AC002EE00271293 /* ViewModel */,
+				0A9A02262AC002FF00271293 /* View */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -167,10 +219,9 @@
 		0A9DA7AA2ABC65570021A8B1 /* PlaceDetails */ = {
 			isa = PBXGroup;
 			children = (
-				0A9DA7AC2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift */,
-				0A9DA7AE2ABC65C30021A8B1 /* PlaceDetailsViewController.swift */,
-				0A9DA7B02ABC65EB0021A8B1 /* PlaceDetailsInput.swift */,
-				0A9DA7B22ABC65F20021A8B1 /* PlaceDetailsOutput.swift */,
+				0A9A02272AC0045800271293 /* Contants */,
+				0A9A02282AC0046800271293 /* ViewModel */,
+				0A9A02292AC0049900271293 /* View */,
 			);
 			path = PlaceDetails;
 			sourceTree = "<group>";
@@ -179,9 +230,65 @@
 			isa = PBXGroup;
 			children = (
 				0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */,
-				0A9DA7C92ABC66C80021A8B1 /* ScreenAssemblyImpl.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		0A9DA7DD2ABD529D0021A8B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7E02ABD53120021A8B1 /* AuthParameters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A9DA7E22ABD55700021A8B1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7E32ABD562C0021A8B1 /* CellsReusingUtils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A9DA7ED2ABD93650021A8B1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7DB2ABD50E10021A8B1 /* AuthCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0A9DA7F02ABD94260021A8B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7ED2ABD93650021A8B1 /* Cell */,
+				0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A9DA7F12ABD942D0021A8B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7EB2ABD92F30021A8B1 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A9DA7F22ABD943D0021A8B1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7C22ABC66570021A8B1 /* AuthConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0A9DA7F52ABD963C0021A8B1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DA7F32ABD96370021A8B1 /* Dynamic.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,20 +361,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9DA7C32ABC66570021A8B1 /* AuthOutput.swift in Sources */,
-				0A9DA7AD2ABC658C0021A8B1 /* PlaceDetailsPresenter.swift in Sources */,
-				0A9DA7B92ABC662E0021A8B1 /* MapInput.swift in Sources */,
-				0A9DA7B52ABC66160021A8B1 /* MapPresenter.swift in Sources */,
-				0A9DA7BB2ABC66350021A8B1 /* MapOutput.swift in Sources */,
-				0A9DA7C12ABC66500021A8B1 /* AuthInput.swift in Sources */,
+				0A9DA7DC2ABD50E10021A8B1 /* AuthCell.swift in Sources */,
+				0A9DA7C32ABC66570021A8B1 /* AuthConstants.swift in Sources */,
+				0A9DA7AD2ABC658C0021A8B1 /* PlaceDetailsViewModel.swift in Sources */,
+				0A9DA7E42ABD562C0021A8B1 /* CellsReusingUtils.swift in Sources */,
+				0A9DA7B52ABC66160021A8B1 /* MapViewModel.swift in Sources */,
+				0A9DA7F42ABD96370021A8B1 /* Dynamic.swift in Sources */,
+				0A9DA7D02ABC8B100021A8B1 /* MapConstants.swift in Sources */,
+				0A9DA7CE2ABC8B090021A8B1 /* PlaceDetailsContants.swift in Sources */,
+				0A9DA7D62ABCB06C0021A8B1 /* NetworkService.swift in Sources */,
 				0A9DA7BF2ABC664B0021A8B1 /* AuthViewController.swift in Sources */,
-				0A9DA7BD2ABC66440021A8B1 /* AuthPresenter.swift in Sources */,
+				0A9DA7E62ABD58990021A8B1 /* AuthParameters.swift in Sources */,
 				0A9DA7AF2ABC65C30021A8B1 /* PlaceDetailsViewController.swift in Sources */,
-				0A9DA7B12ABC65EB0021A8B1 /* PlaceDetailsInput.swift in Sources */,
 				0A9DA78D2ABC60AB0021A8B1 /* AppDelegate.swift in Sources */,
+				0A9DA7EC2ABD92F30021A8B1 /* AuthViewModel.swift in Sources */,
 				0A9DA7C82ABC66A30021A8B1 /* ScreenAssembly.swift in Sources */,
-				0A9DA7CA2ABC66C80021A8B1 /* ScreenAssemblyImpl.swift in Sources */,
-				0A9DA7B32ABC65F20021A8B1 /* PlaceDetailsOutput.swift in Sources */,
 				0A9DA7B72ABC66220021A8B1 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +515,7 @@
 		};
 		0A9DA79E2ABC60AD0021A8B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A9DA7A02ABC61150021A8B1 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -437,6 +546,7 @@
 		};
 		0A9DA79F2ABC60AD0021A8B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A9DA7A02ABC61150021A8B1 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

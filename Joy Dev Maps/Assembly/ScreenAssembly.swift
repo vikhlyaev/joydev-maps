@@ -29,9 +29,8 @@ final class ScreenAssemblyImpl: ScreenAssembly {
     }
     
     func makePlaceDetailsScreen() -> UIViewController {
-        let presenter = PlaceDetailsPresenter()
-        let vc = PlaceDetailsViewController(presenter: presenter)
-        presenter.view = vc
+        let viewModel = PlaceDetailsViewModel()
+        let vc = PlaceDetailsViewController(viewModel: viewModel)
         return vc
     }
 }
