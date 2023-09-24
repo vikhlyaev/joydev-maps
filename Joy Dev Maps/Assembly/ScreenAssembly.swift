@@ -12,3 +12,26 @@ protocol ScreenAssembly {
     func makeMapScreen() -> UIViewController
     func makeAuthScreen() -> UIViewController
 }
+
+// MARK: - Implementation
+
+final class ScreenAssemblyImpl: ScreenAssembly {
+    func makeMapScreen() -> UIViewController {
+        let viewModel = MapViewModel()
+        let vc = MapViewController(viewModel: viewModel)
+        return vc
+    }
+    
+    func makeAuthScreen() -> UIViewController {
+        let viewModel = AuthViewModel(screenAssembly: self)
+        let vc = AuthViewController(viewModel: viewModel)
+        return vc
+    }
+    
+    func makePlaceDetailsScreen() -> UIViewController {
+        let presenter = PlaceDetailsPresenter()
+        let vc = PlaceDetailsViewController(presenter: presenter)
+        presenter.view = vc
+        return vc
+    }
+}
