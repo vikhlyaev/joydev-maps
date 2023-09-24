@@ -4,6 +4,12 @@
 <dict>
 	<key>API Key</key>
 	<string>$(API_KEY)</string>
+	<key>Base URL</key>
+	<string>$(BASE_URL)</string>
+	<key>Login</key>
+	<string>$(LOGIN)</string>
+	<key>Password</key>
+	<string>$(PASSWORD)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
