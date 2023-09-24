@@ -16,9 +16,8 @@ final class ScreenAssemblyImpl: ScreenAssembly {
     }
     
     func makeAuthScreen() -> UIViewController {
-        let presenter = AuthPresenter()
-        let vc = AuthViewController(presenter: presenter)
-        presenter.view = vc
+        let viewModel = AuthViewModel(screenAssembly: self)
+        let vc = AuthViewController(viewModel: viewModel)
         return vc
     }
     
