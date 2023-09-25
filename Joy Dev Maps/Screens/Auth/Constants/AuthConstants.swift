@@ -5,15 +5,11 @@
 //  Created by Anton Vikhlyaev on 21.09.2023.
 //
 
-import UIKit
+import Foundation
 
 enum AuthConstants {
-    static let logoImageViewImage = UIImage(named: "Logo")
-    static let loginButtonText = "Войти"
-    static let errorLoginAndPasswordNotFound = "Логин или пароль не получены"
-    static let errorLoginAndPasswordIncorrect = "Неверный логин или пароль"
-    
     enum Logo {
+        static let imageName = "Logo"
         static let topInset: CGFloat = 100
         static let widthHeight: CGFloat = 150
     }
@@ -25,11 +21,14 @@ enum AuthConstants {
     }
     
     enum LoginButton {
+        static let text = "Войти"
         static let bottomInset: CGFloat = 16
         static let leftRightInsets: CGFloat = 16
     }
     
     enum Error {
+        static let loginOrPasswordNotFound = "Логин или пароль не получены"
+        static let loginOrPasswordIncorrect = "Неверный логин или пароль"
         static let topInset: CGFloat = 16
         static let leftRigthInsets: CGFloat = 16
     }

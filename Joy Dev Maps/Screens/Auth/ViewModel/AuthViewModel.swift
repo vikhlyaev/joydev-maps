@@ -41,7 +41,7 @@ final class AuthViewModel: AuthOutput {
     
     func loginButtonTapped(login: String, password: String) {
         guard let correctLogin = self.login, let correctPassword = self.password else {
-            errorText.value = AuthConstants.errorLoginAndPasswordNotFound
+            errorText.value = AuthConstants.Error.loginOrPasswordNotFound
             return
         }
         if login == correctLogin && password == correctPassword {
@@ -49,7 +49,7 @@ final class AuthViewModel: AuthOutput {
             let window = UIApplication.shared.connectedScenes.flatMap { ($0 as? UIWindowScene)?.windows ?? [] }.last { $0.isKeyWindow }
             window?.rootViewController = mapViewController
         } else {
-            errorText.value = AuthConstants.errorLoginAndPasswordIncorrect
+            errorText.value = AuthConstants.Error.loginOrPasswordIncorrect
         }
     }
 }

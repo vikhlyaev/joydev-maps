@@ -13,7 +13,7 @@ final class AuthViewController: UIViewController {
     
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = AuthConstants.logoImageViewImage
+        imageView.image = UIImage(named: AuthConstants.Logo.imageName)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -42,7 +42,7 @@ final class AuthViewController: UIViewController {
         configuration.baseBackgroundColor = .systemGreen
         configuration.baseForegroundColor = .systemGreen
         configuration.buttonSize = .large
-        configuration.title = AuthConstants.loginButtonText
+        configuration.title = AuthConstants.LoginButton.text
         let button = UIButton(configuration: configuration)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -174,11 +174,4 @@ private extension AuthViewController {
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.LoginButton.leftRightInsets)
         ])
     }
-}
-
-
-// MARK: - Preview
-
-#Preview {
-    ScreenAssemblyImpl().makeAuthScreen()
 }
