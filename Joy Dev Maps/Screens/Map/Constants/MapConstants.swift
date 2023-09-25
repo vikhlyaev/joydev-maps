@@ -8,5 +8,16 @@
 import Foundation
 
 enum MapConstants {
+    enum SearchTextField {
+        static let placeholderText = "Поиск на карте"
+        static let topInset: CGFloat = 40
+        static let leftRightInsets: CGFloat = 40
+        static let height: CGFloat = 44
+    }
     
+    enum MyLocationButton {
+        static let imageName = "location.fill"
+        static let rightInset: CGFloat = 16
+        static let bottomInset: CGFloat = 16
+    }
 }
