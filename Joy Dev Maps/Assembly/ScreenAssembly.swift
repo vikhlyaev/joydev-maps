@@ -16,9 +16,30 @@ protocol ScreenAssembly {
 // MARK: - Implementation
 
 final class ScreenAssemblyImpl: ScreenAssembly {
+    
+    // MARK: Properties
+    
+    private let serviceAssembly: ServiceAssembly
+    
+    // MARK: Life Cycle
+    
+    init(serviceAssembly: ServiceAssembly) {
+        self.serviceAssembly = serviceAssembly
+    }
+    
+    // MARK: ScreenAssembly
+    
     func makeMapScreen() -> UIViewController {
-        let viewModel = MapViewModel()
+        let placeService = serviceAssembly.makePlaceService()
+        var userLocationService = serviceAssembly.makeUserLocationService()
+        let lastLocationService = serviceAssembly.makeLastLocationService()
+        let viewModel = MapViewModel(
+            placeService: placeService,
+            userLocationService: userLocationService,
+            lastLocationService: lastLocationService
+        )
         let vc = MapViewController(viewModel: viewModel)
+        userLocationService.delegate = viewModel
         return vc
     }
     
