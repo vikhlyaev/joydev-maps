@@ -4,8 +4,6 @@
 <dict>
 	<key>API Key</key>
 	<string>$(API_KEY)</string>
-	<key>Base URL</key>
-	<string>$(BASE_URL)</string>
 	<key>Login</key>
 	<string>$(LOGIN)</string>
 	<key>Password</key>
@@ -17,5 +15,9 @@
 		<key>UISceneConfigurations</key>
 		<dict/>
 	</dict>
+	<key>URL Host</key>
+	<string>$(URL_HOST)</string>
+	<key>URL Path</key>
+	<string>$(URL_PATH)</string>
 </dict>
 </plist>
