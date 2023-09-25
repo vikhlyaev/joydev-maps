@@ -14,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let screenAssembly: ScreenAssembly = ScreenAssemblyImpl()
-        window?.rootViewController = screenAssembly.makeAuthScreen()
+        let serviceAssembly: ServiceAssembly = ServiceAssemblyImpl()
+        let screenAssembly: ScreenAssembly = ScreenAssemblyImpl(serviceAssembly: serviceAssembly)
+        window?.rootViewController = screenAssembly.makeMapScreen()
         window?.makeKeyAndVisible()
         return true
     }
