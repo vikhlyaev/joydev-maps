@@ -48,6 +48,7 @@ final class PlaceServiceImpl: PlaceService {
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue(apiKey, forHTTPHeaderField: "Authorization")
+        request.addValue("ru", forHTTPHeaderField: "Accept-Language")
         return request
     }
     
