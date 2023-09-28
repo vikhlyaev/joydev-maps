@@ -10,7 +10,7 @@ import Foundation
 enum MapConstants {
     enum SearchTextField {
         static let placeholderText = "Поиск на карте"
-        static let topInset: CGFloat = 40
+        static let topInset: CGFloat = 8
         static let leftRightInsets: CGFloat = 40
         static let height: CGFloat = 44
     }

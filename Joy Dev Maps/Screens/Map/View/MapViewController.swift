@@ -74,7 +74,7 @@ final class MapViewController: UIViewController {
     // MARK: Setup UI
     
     private func setupView() {
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemBackground
         view.addSubview(map)
         view.addSubview(searchTextField)
         view.addSubview(myLocationButton)
@@ -146,9 +146,11 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard 
             let view = view.annotation as? PlaceAnnotation,
-            let id = view.id
+            let id = view.id,
+            let place = viewModel.viewAnnotationTapped(id: id)
         else { return }
-        viewModel.viewModelForPlaceDetailsScreen(with: id)
+        let vc = ScreenAssembly.shared.makePlaceDetailsScreen(with: place)
+        present(vc, animated: true)
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -165,7 +167,7 @@ private extension MapViewController {
             map.topAnchor.constraint(equalTo: view.topAnchor),
             map.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             map.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            map.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            map.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             searchTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: MapConstants.SearchTextField.topInset),
             searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: MapConstants.SearchTextField.leftRightInsets),

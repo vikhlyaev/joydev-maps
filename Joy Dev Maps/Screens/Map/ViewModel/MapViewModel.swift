@@ -16,7 +16,7 @@ protocol MapOutput {
     func requestUserLocation()
     func getPlace(with searchText: String)
     func didUpdateCenterCoordinate(_ centerCoordinate: CLLocationCoordinate2D)
-    func viewModelForPlaceDetailsScreen(with id: String)
+    func viewAnnotationTapped(id: String) -> Place?
 }
 
 final class MapViewModel: MapOutput {
@@ -26,6 +26,8 @@ final class MapViewModel: MapOutput {
     private let placeService: PlaceService
     private let userLocationService: UserLocationService
     private let lastLocationService: LastLocationService
+    private let screenAssembly = ScreenAssembly.shared
+    
     private var places: [Place] = []
     private var currentLocation = CLLocation() {
         didSet {
@@ -98,8 +100,9 @@ final class MapViewModel: MapOutput {
         currentLocation = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
     }
     
-    func viewModelForPlaceDetailsScreen(with id: String) {
-        print(id)
+    func viewAnnotationTapped(id: String) -> Place? {
+        guard let place = places.filter({ $0.id == id }).first else { return nil }
+        return place
     }
 }
 
