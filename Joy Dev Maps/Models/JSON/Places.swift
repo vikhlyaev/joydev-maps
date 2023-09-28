@@ -52,3 +52,13 @@ struct Location: Codable {
     let postcode: String?
     let region: String?
 }
+
+struct Photo: Decodable {
+    let photoPrefix: String
+    let photoSuffix: String
+
+    enum CodingKeys: String, CodingKey {
+        case photoPrefix = "prefix"
+        case photoSuffix = "suffix"
+    }
+}
