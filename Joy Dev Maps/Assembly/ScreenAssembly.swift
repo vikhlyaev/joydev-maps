@@ -7,32 +7,41 @@
 
 import UIKit
 
-protocol ScreenAssembly {
-    func makePlaceDetailsScreen() -> UIViewController
-    func makeMapScreen() -> UIViewController
-    func makeAuthScreen() -> UIViewController
-}
-
-// MARK: - Implementation
-
-final class ScreenAssemblyImpl: ScreenAssembly {
+final class ScreenAssembly {
+    
+    // MARK: Singleton
+    
+    static let shared = ScreenAssembly()
     
     // MARK: Properties
     
-    private let serviceAssembly: ServiceAssembly
+    private let favoritesService: FavoritesService
+    private let placeService: PlaceService
+    private var userLocationService: UserLocationService
+    private let lastLocationService: LastLocationService
+    private let validationService: ValidationService
+    private let authService: AuthService
     
     // MARK: Life Cycle
     
-    init(serviceAssembly: ServiceAssembly) {
-        self.serviceAssembly = serviceAssembly
+    private init() {
+        self.favoritesService = FavoritesServiceImpl()
+        self.placeService = PlaceServiceImpl()
+        self.userLocationService = UserLocationServiceImpl()
+        self.lastLocationService = LastLocationServiceImpl()
+        self.validationService = ValidationServiceImpl()
+        self.authService = AuthServiceImpl()
     }
     
     // MARK: ScreenAssembly
     
+    func makeFavoritesScreen() -> UIViewController {
+        let viewModel = FavoritesViewModel(favoritesService: favoritesService)
+        let vc = FavoritesViewController(viewModel: viewModel)
+        return vc
+    }
+    
     func makeMapScreen() -> UIViewController {
-        let placeService = serviceAssembly.makePlaceService()
-        var userLocationService = serviceAssembly.makeUserLocationService()
-        let lastLocationService = serviceAssembly.makeLastLocationService()
         let viewModel = MapViewModel(
             placeService: placeService,
             userLocationService: userLocationService,
@@ -44,13 +53,14 @@ final class ScreenAssemblyImpl: ScreenAssembly {
     }
     
     func makeAuthScreen() -> UIViewController {
-        let viewModel = AuthViewModel(screenAssembly: self)
+        let viewModel = AuthViewModel(validationService: validationService, authService: authService)
         let vc = AuthViewController(viewModel: viewModel)
         return vc
     }
     
-    func makePlaceDetailsScreen() -> UIViewController {
-        let viewModel = PlaceDetailsViewModel()
+    func makePlaceDetailsScreen(with place: Place) -> UIViewController {
+        let favoritesService = FavoritesServiceImpl()
+        let viewModel = PlaceDetailsViewModel(place: place, favoritesService: favoritesService)
         let vc = PlaceDetailsViewController(viewModel: viewModel)
         return vc
     }

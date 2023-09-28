@@ -11,7 +11,7 @@ struct Places: Decodable {
     let results: [Place]
 }
 
-struct Place: Decodable {
+struct Place: Codable {
     let id: String
     let categories: [Category]
     let distance: Int
@@ -19,6 +19,7 @@ struct Place: Decodable {
     let link: URL
     let location: Location
     let name: String
+    var isFavorites = false
 
     enum CodingKeys: String, CodingKey {
         case id = "fsq_id"
@@ -31,22 +32,11 @@ struct Place: Decodable {
     }
 }
 
-struct Category: Decodable {
+struct Category: Codable {
     let name: String
-    let icon: Icon
 }
 
-struct Icon: Decodable {
-    let iconPrefix: String
-    let suffix: String
-
-    enum CodingKeys: String, CodingKey {
-        case iconPrefix = "prefix"
-        case suffix
-    }
-}
-
-struct Geocode: Decodable {
+struct Geocode: Codable {
     let main: LocationCoordinate
 }
 
@@ -55,10 +45,10 @@ struct LocationCoordinate: Codable {
     let longitude: Double
 }
 
-struct Location: Decodable {
+struct Location: Codable {
     let address: String?
-    let country: String
-    let locality: String
+    let country: String?
+    let locality: String?
     let postcode: String?
-    let region: String
+    let region: String?
 }

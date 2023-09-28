@@ -14,9 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let serviceAssembly: ServiceAssembly = ServiceAssemblyImpl()
-        let screenAssembly: ScreenAssembly = ScreenAssemblyImpl(serviceAssembly: serviceAssembly)
-        window?.rootViewController = screenAssembly.makeMapScreen()
+        let authService: AuthService = AuthServiceImpl()
+        if authService.loadUser() != nil {
+            window?.rootViewController = TabBarController()
+        } else {
+            window?.rootViewController = ScreenAssembly.shared.makeAuthScreen()
+        }
         window?.makeKeyAndVisible()
         return true
     }
