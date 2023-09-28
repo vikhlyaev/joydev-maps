@@ -10,6 +10,7 @@ import Foundation
 protocol LastLocationService {
     func loadLastLocation() -> LocationCoordinate?
     func saveLastLocation(location: LocationCoordinate)
+    func clean()
 }
 
 // MARK: - Implementation
@@ -35,5 +36,9 @@ final class LastLocationServiceImpl: LastLocationService {
     func saveLastLocation(location: LocationCoordinate) {
         guard let data = try? encoder.encode(location) else { return }
         UserDefaults.standard.set(data, forKey: key)
+    }
+    
+    func clean() {
+        UserDefaults.standard.removeObject(forKey: key)
     }
 }
