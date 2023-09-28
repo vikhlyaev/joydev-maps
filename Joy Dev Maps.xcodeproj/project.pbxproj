@@ -236,9 +236,9 @@
 		0A9DA7A52ABC637F0021A8B1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0AA1C2872AC2091D00D248AE /* Favorites */,
 				0A9DA7A82ABC64C70021A8B1 /* Auth */,
 				0A9DA7A92ABC64D70021A8B1 /* Map */,
+				0AA1C2872AC2091D00D248AE /* Favorites */,
 				0A9DA7AA2ABC65570021A8B1 /* PlaceDetails */,
 				0AA1C27C2AC1FF3400D248AE /* TabBarController.swift */,
 			);

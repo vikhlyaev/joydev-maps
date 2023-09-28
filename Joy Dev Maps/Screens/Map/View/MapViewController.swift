@@ -147,7 +147,7 @@ extension MapViewController: MKMapViewDelegate {
         guard 
             let view = view.annotation as? PlaceAnnotation,
             let id = view.id,
-            let place = viewModel.viewAnnotationTapped(id: id)
+            let place = viewModel.placeAt(id: id)
         else { return }
         let vc = ScreenAssembly.shared.makePlaceDetailsScreen(with: place)
         present(vc, animated: true)
