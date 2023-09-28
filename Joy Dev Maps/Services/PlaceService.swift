@@ -21,7 +21,7 @@ final class PlaceServiceImpl: PlaceService {
     
     // MARK: Life Cycle
     
-    init(networkService: NetworkService) {
+    init(networkService: NetworkService = NetworkServiceImpl()) {
         self.networkService = networkService
     }
     
@@ -42,7 +42,8 @@ final class PlaceServiceImpl: PlaceService {
             URLQueryItem(name: "ll", value: "\(coordinate.latitude),\(coordinate.longitude)"),
             URLQueryItem(name: "open_now", value: "true"),
             URLQueryItem(name: "sort", value: "DISTANCE"),
-            URLQueryItem(name: "radius", value: "100000")
+            URLQueryItem(name: "radius", value: "100000"),
+            URLQueryItem(name: "limit", value: "50")
         ]
         guard let url = urlComponents.url else { return nil }
         var request = URLRequest(url: url)
