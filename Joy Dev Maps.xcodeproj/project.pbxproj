@@ -10,7 +10,6 @@
 		0A5EFA562AC15EDB0022929C /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EFA552AC15EDB0022929C /* UserLocationService.swift */; };
 		0A9A022C2AC01FB100271293 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A022B2AC01FB100271293 /* Places.swift */; };
 		0A9A02302AC03DFF00271293 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A022F2AC03DFF00271293 /* PlaceService.swift */; };
-		0A9A02322AC0570000271293 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A02312AC0570000271293 /* ServiceAssembly.swift */; };
 		0A9A02362AC066BF00271293 /* LastLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A02352AC066BF00271293 /* LastLocationService.swift */; };
 		0A9A02382AC1323000271293 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A02372AC1322F00271293 /* UIView + Extensions.swift */; };
 		0A9A023A2AC1349800271293 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A02392AC1349800271293 /* PlaceAnnotation.swift */; };
@@ -24,7 +23,7 @@
 		0A9DA7BF2ABC664B0021A8B1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */; };
 		0A9DA7C32ABC66570021A8B1 /* AuthConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C22ABC66570021A8B1 /* AuthConstants.swift */; };
 		0A9DA7C82ABC66A30021A8B1 /* ScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */; };
-		0A9DA7CE2ABC8B090021A8B1 /* PlaceDetailsContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsContants.swift */; };
+		0A9DA7CE2ABC8B090021A8B1 /* PlaceDetailsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsConstants.swift */; };
 		0A9DA7D02ABC8B100021A8B1 /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7CF2ABC8B100021A8B1 /* MapConstants.swift */; };
 		0A9DA7D62ABCB06C0021A8B1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7D52ABCB06C0021A8B1 /* NetworkService.swift */; };
 		0A9DA7DC2ABD50E10021A8B1 /* AuthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7DB2ABD50E10021A8B1 /* AuthCell.swift */; };
@@ -32,13 +31,24 @@
 		0A9DA7E62ABD58990021A8B1 /* AuthParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7E02ABD53120021A8B1 /* AuthParameters.swift */; };
 		0A9DA7EC2ABD92F30021A8B1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7EB2ABD92F30021A8B1 /* AuthViewModel.swift */; };
 		0A9DA7F42ABD96370021A8B1 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DA7F32ABD96370021A8B1 /* Dynamic.swift */; };
+		0AA1C27B2AC1FE0800D248AE /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1C27A2AC1FE0800D248AE /* String + Extensions.swift */; };
+		0AA1C27D2AC1FF3400D248AE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1C27C2AC1FF3400D248AE /* TabBarController.swift */; };
+		0AA1C27F2AC208E400D248AE /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1C27E2AC208E400D248AE /* FavoritesViewController.swift */; };
+		0AA1C2812AC208F500D248AE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1C2802AC208F500D248AE /* FavoritesViewModel.swift */; };
+		0AA1C2832AC208FE00D248AE /* FavoritesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1C2822AC208FE00D248AE /* FavoritesConstants.swift */; };
+		0AA1C2892AC20B2700D248AE /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1C2882AC20B2700D248AE /* FavoritesService.swift */; };
+		0AB395C32AC48ADE00BFE90F /* RegParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB395C22AC48ADE00BFE90F /* RegParameters.swift */; };
+		0AB395C72AC4911D00BFE90F /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB395C62AC4911D00BFE90F /* Parameters.swift */; };
+		0AB395C92AC49E1100BFE90F /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB395C82AC49E1100BFE90F /* AuthState.swift */; };
+		0AB395CB2AC4A31B00BFE90F /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB395CA2AC4A31B00BFE90F /* ValidationService.swift */; };
+		0AB395CD2AC4BDCB00BFE90F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB395CC2AC4BDCB00BFE90F /* User.swift */; };
+		0AB395CF2AC4BF6C00BFE90F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB395CE2AC4BF6C00BFE90F /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A5EFA552AC15EDB0022929C /* UserLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationService.swift; sourceTree = "<group>"; };
 		0A9A022B2AC01FB100271293 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		0A9A022F2AC03DFF00271293 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
-		0A9A02312AC0570000271293 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		0A9A02352AC066BF00271293 /* LastLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastLocationService.swift; sourceTree = "<group>"; };
 		0A9A02372AC1322F00271293 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		0A9A02392AC1349800271293 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
@@ -56,7 +66,7 @@
 		0A9DA7BE2ABC664B0021A8B1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0A9DA7C22ABC66570021A8B1 /* AuthConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConstants.swift; sourceTree = "<group>"; };
 		0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAssembly.swift; sourceTree = "<group>"; };
-		0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsContants.swift; sourceTree = "<group>"; };
+		0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsConstants.swift; sourceTree = "<group>"; };
 		0A9DA7CF2ABC8B100021A8B1 /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
 		0A9DA7D52ABCB06C0021A8B1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0A9DA7DB2ABD50E10021A8B1 /* AuthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCell.swift; sourceTree = "<group>"; };
@@ -64,6 +74,18 @@
 		0A9DA7E32ABD562C0021A8B1 /* CellsReusingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsReusingUtils.swift; sourceTree = "<group>"; };
 		0A9DA7EB2ABD92F30021A8B1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0A9DA7F32ABD96370021A8B1 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		0AA1C27A2AC1FE0800D248AE /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
+		0AA1C27C2AC1FF3400D248AE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		0AA1C27E2AC208E400D248AE /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		0AA1C2802AC208F500D248AE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		0AA1C2822AC208FE00D248AE /* FavoritesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesConstants.swift; sourceTree = "<group>"; };
+		0AA1C2882AC20B2700D248AE /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
+		0AB395C22AC48ADE00BFE90F /* RegParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegParameters.swift; sourceTree = "<group>"; };
+		0AB395C62AC4911D00BFE90F /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		0AB395C82AC49E1100BFE90F /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		0AB395CA2AC4A31B00BFE90F /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		0AB395CC2AC4BDCB00BFE90F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0AB395CE2AC4BF6C00BFE90F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +126,7 @@
 		0A9A02272AC0045800271293 /* Contants */ = {
 			isa = PBXGroup;
 			children = (
-				0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsContants.swift */,
+				0A9DA7CD2ABC8B090021A8B1 /* PlaceDetailsConstants.swift */,
 			);
 			path = Contants;
 			sourceTree = "<group>";
@@ -144,7 +166,10 @@
 		0A9A023C2AC134AB00271293 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0AB395C62AC4911D00BFE90F /* Parameters.swift */,
 				0A9DA7E02ABD53120021A8B1 /* AuthParameters.swift */,
+				0AB395C22AC48ADE00BFE90F /* RegParameters.swift */,
+				0AB395C82AC49E1100BFE90F /* AuthState.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -172,7 +197,6 @@
 			children = (
 				0A9DA7A42ABC63770021A8B1 /* App */,
 				0A9DA7C62ABC66930021A8B1 /* Assembly */,
-				0A9DA7A72ABC63A30021A8B1 /* Core */,
 				0A9DA7DD2ABD529D0021A8B1 /* Models */,
 				0A9DA7A52ABC637F0021A8B1 /* Screens */,
 				0A9DA7A62ABC63930021A8B1 /* Services */,
@@ -212,9 +236,11 @@
 		0A9DA7A52ABC637F0021A8B1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0AA1C2872AC2091D00D248AE /* Favorites */,
 				0A9DA7A82ABC64C70021A8B1 /* Auth */,
 				0A9DA7A92ABC64D70021A8B1 /* Map */,
 				0A9DA7AA2ABC65570021A8B1 /* PlaceDetails */,
+				0AA1C27C2AC1FF3400D248AE /* TabBarController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -222,19 +248,15 @@
 		0A9DA7A62ABC63930021A8B1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0A9DA7D52ABCB06C0021A8B1 /* NetworkService.swift */,
 				0A9A022F2AC03DFF00271293 /* PlaceService.swift */,
+				0AA1C2882AC20B2700D248AE /* FavoritesService.swift */,
 				0A9A02352AC066BF00271293 /* LastLocationService.swift */,
 				0A5EFA552AC15EDB0022929C /* UserLocationService.swift */,
+				0AB395CA2AC4A31B00BFE90F /* ValidationService.swift */,
+				0AB395CE2AC4BF6C00BFE90F /* AuthService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		0A9DA7A72ABC63A30021A8B1 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				0A9DA7D52ABCB06C0021A8B1 /* NetworkService.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		0A9DA7A82ABC64C70021A8B1 /* Auth */ = {
@@ -271,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				0A9DA7C72ABC66A30021A8B1 /* ScreenAssembly.swift */,
-				0A9A02312AC0570000271293 /* ServiceAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -282,6 +303,7 @@
 				0A9A022A2AC01F9600271293 /* JSON */,
 				0A9A023C2AC134AB00271293 /* UI */,
 				0A9A023B2AC1349D00271293 /* MapKit */,
+				0AB395CC2AC4BDCB00BFE90F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +313,7 @@
 			children = (
 				0A9DA7E32ABD562C0021A8B1 /* CellsReusingUtils.swift */,
 				0A9A02372AC1322F00271293 /* UIView + Extensions.swift */,
+				0AA1C27A2AC1FE0800D248AE /* String + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -334,6 +357,40 @@
 				0A9DA7F32ABD96370021A8B1 /* Dynamic.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0AA1C2842AC2090200D248AE /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0AA1C2822AC208FE00D248AE /* FavoritesConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0AA1C2852AC2090B00D248AE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AA1C2802AC208F500D248AE /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0AA1C2862AC2091300D248AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0AA1C27E2AC208E400D248AE /* FavoritesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0AA1C2872AC2091D00D248AE /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				0AA1C2842AC2090200D248AE /* Constants */,
+				0AA1C2852AC2090B00D248AE /* ViewModel */,
+				0AA1C2862AC2091300D248AE /* View */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,28 +463,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA1C2812AC208F500D248AE /* FavoritesViewModel.swift in Sources */,
 				0A9DA7DC2ABD50E10021A8B1 /* AuthCell.swift in Sources */,
 				0A5EFA562AC15EDB0022929C /* UserLocationService.swift in Sources */,
+				0AA1C2832AC208FE00D248AE /* FavoritesConstants.swift in Sources */,
+				0AA1C27F2AC208E400D248AE /* FavoritesViewController.swift in Sources */,
+				0AA1C27D2AC1FF3400D248AE /* TabBarController.swift in Sources */,
 				0A9DA7C32ABC66570021A8B1 /* AuthConstants.swift in Sources */,
 				0A9A023A2AC1349800271293 /* PlaceAnnotation.swift in Sources */,
 				0A9DA7AD2ABC658C0021A8B1 /* PlaceDetailsViewModel.swift in Sources */,
 				0A9A022C2AC01FB100271293 /* Places.swift in Sources */,
 				0A9DA7E42ABD562C0021A8B1 /* CellsReusingUtils.swift in Sources */,
+				0AB395CB2AC4A31B00BFE90F /* ValidationService.swift in Sources */,
+				0AB395C72AC4911D00BFE90F /* Parameters.swift in Sources */,
 				0A9DA7B52ABC66160021A8B1 /* MapViewModel.swift in Sources */,
 				0A9DA7F42ABD96370021A8B1 /* Dynamic.swift in Sources */,
 				0A9A02382AC1323000271293 /* UIView + Extensions.swift in Sources */,
 				0A9DA7D02ABC8B100021A8B1 /* MapConstants.swift in Sources */,
-				0A9DA7CE2ABC8B090021A8B1 /* PlaceDetailsContants.swift in Sources */,
+				0AA1C2892AC20B2700D248AE /* FavoritesService.swift in Sources */,
+				0A9DA7CE2ABC8B090021A8B1 /* PlaceDetailsConstants.swift in Sources */,
 				0A9DA7D62ABCB06C0021A8B1 /* NetworkService.swift in Sources */,
-				0A9A02322AC0570000271293 /* ServiceAssembly.swift in Sources */,
 				0A9DA7BF2ABC664B0021A8B1 /* AuthViewController.swift in Sources */,
 				0A9DA7E62ABD58990021A8B1 /* AuthParameters.swift in Sources */,
+				0AA1C27B2AC1FE0800D248AE /* String + Extensions.swift in Sources */,
+				0AB395CD2AC4BDCB00BFE90F /* User.swift in Sources */,
 				0A9A02302AC03DFF00271293 /* PlaceService.swift in Sources */,
 				0A9A02362AC066BF00271293 /* LastLocationService.swift in Sources */,
 				0A9DA7AF2ABC65C30021A8B1 /* PlaceDetailsViewController.swift in Sources */,
 				0A9DA78D2ABC60AB0021A8B1 /* AppDelegate.swift in Sources */,
 				0A9DA7EC2ABD92F30021A8B1 /* AuthViewModel.swift in Sources */,
 				0A9DA7C82ABC66A30021A8B1 /* ScreenAssembly.swift in Sources */,
+				0AB395C92AC49E1100BFE90F /* AuthState.swift in Sources */,
+				0AB395CF2AC4BF6C00BFE90F /* AuthService.swift in Sources */,
+				0AB395C32AC48ADE00BFE90F /* RegParameters.swift in Sources */,
 				0A9DA7B72ABC66220021A8B1 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
