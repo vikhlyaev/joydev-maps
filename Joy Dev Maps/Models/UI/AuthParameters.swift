@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum AuthParameters: CaseIterable {
-    case name
+enum AuthParameters: CaseIterable, Parameters {
+    case login
     case password
     
     var placeholder: String {
         switch self {
-        case .name:
+        case .login:
             "Имя пользователя"
         case .password:
             "Пароль"
