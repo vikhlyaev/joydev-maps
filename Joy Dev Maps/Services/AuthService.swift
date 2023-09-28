@@ -30,7 +30,6 @@ final class AuthServiceImpl: AuthService {
             let data = UserDefaults.standard.object(forKey: key) as? Data,
             let user = try? decoder.decode(User.self, from: data)
         else { return nil }
-        print(user)
         return user
     }
     

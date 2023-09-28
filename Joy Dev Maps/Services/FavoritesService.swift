@@ -30,7 +30,6 @@ final class FavoritesServiceImpl: FavoritesService {
     private let decoder = JSONDecoder()
     private var favoritesPlaces: [Place] = [] {
         didSet {
-            print("didSet = ", favoritesPlaces.count)
             saveFavorites(places: favoritesPlaces)
         }
     }
@@ -41,15 +40,10 @@ final class FavoritesServiceImpl: FavoritesService {
         favoritesPlaces = loadFavorites() ?? []
     }
     
-    deinit {
-        print("FavoritesServiceImpl deinit")
-    }
-    
     // MARK: FavoritesService
     
     func count() -> Int {
-        print("favoritesPlaces.count = ", favoritesPlaces.count)
-        return(favoritesPlaces.count)
+        favoritesPlaces.count
     }
     
     func object(at index: Int) -> Place? {
@@ -71,8 +65,6 @@ final class FavoritesServiceImpl: FavoritesService {
         UserDefaults.standard.removeObject(forKey: key)
         guard let data = try? encoder.encode(places) else { return }
         UserDefaults.standard.set(data, forKey: key)
-        
-        print("saveFavorites(places: [Place]) = ", places.count)
     }
     
     func addPlace(_ place: Place) {
