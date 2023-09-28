@@ -13,6 +13,7 @@ protocol MapOutput {
     var userLocation: Dynamic<CLLocation> { get }
     var lastLocation: Dynamic<CLLocation> { get }
     var annotations: Dynamic<[MKAnnotation]> { get }
+    var errorText: Dynamic<String> { get }
     func requestUserLocation()
     func getPlace(with searchText: String)
     func didUpdateCenterCoordinate(_ centerCoordinate: CLLocationCoordinate2D)
@@ -38,6 +39,7 @@ final class MapViewModel: MapOutput {
         }
     }
     
+    var errorText: Dynamic<String> = Dynamic("")
     var userLocation: Dynamic<CLLocation> = Dynamic(CLLocation())
     var lastLocation: Dynamic<CLLocation> = Dynamic(CLLocation(latitude: 55.893428, longitude: 37.655624))
     var annotations: Dynamic<[MKAnnotation]> = Dynamic([])
@@ -91,7 +93,7 @@ final class MapViewModel: MapOutput {
                 })
                 self?.annotations.value = annotations
             case .failure(let error):
-                print(error)
+                self?.errorText.value = error.localizedDescription
             }
         }
     }

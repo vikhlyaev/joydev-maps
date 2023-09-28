@@ -96,6 +96,12 @@ final class MapViewController: UIViewController {
         viewModel.lastLocation.bind { [weak self] lastLocation in
             self?.setRegion(lastLocation.coordinate)
         }
+        
+        viewModel.errorText.bind { [weak self] errorText in
+            if !errorText.isEmpty {
+                self?.showErrorAlert(with: errorText)
+            }
+        }
     }
     
     // MARK: Private functions
@@ -104,6 +110,13 @@ final class MapViewController: UIViewController {
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: coordinates, span: span)
         map.setRegion(region, animated: true)
+    }
+    
+    private func showErrorAlert(with text: String) {
+        let alert = UIAlertController(title: "Ошибка", message: text, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: "Ок", style: .cancel)
+        alert.addAction(okAlert)
+        present(alert, animated: true)
     }
     
     // MARK: Actions

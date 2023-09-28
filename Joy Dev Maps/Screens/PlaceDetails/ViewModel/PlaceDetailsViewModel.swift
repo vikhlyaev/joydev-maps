@@ -11,6 +11,7 @@ protocol PlaceDetailsOutput {
     var name: String { get }
     var categories: String { get }
     var address: String { get }
+    var errorText: Dynamic<String> { get }
     var imageData: Dynamic<Data> { get }
     var isFavorites: Dynamic<Bool> { get }
     func favoriteButtonTapped()
@@ -24,6 +25,7 @@ final class PlaceDetailsViewModel: PlaceDetailsOutput {
     private let favoritesService: FavoritesService
     private let placeService: PlaceService
     
+    var errorText: Dynamic<String> = Dynamic("")
     var isFavorites: Dynamic<Bool>
     var imageData: Dynamic<Data> = Dynamic(Data())
     
@@ -45,7 +47,7 @@ final class PlaceDetailsViewModel: PlaceDetailsOutput {
             case .success(let imageData):
                 self?.imageData.value = imageData
             case .failure(let error):
-                print(error)
+                self?.errorText.value = error.localizedDescription
             }
         }
     }

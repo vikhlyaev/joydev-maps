@@ -118,6 +118,21 @@ final class PlaceDetailsViewController: UIViewController {
                 self?.photoImageView.image = UIImage(data: imageData)
             }
         }
+        
+        viewModel.errorText.bind { [weak self] errorText in
+            if !errorText.isEmpty {
+                self?.showErrorAlert(with: errorText)
+            }
+        }
+    }
+    
+    // MARK: Private functions
+    
+    private func showErrorAlert(with text: String) {
+        let alert = UIAlertController(title: "Ошибка", message: text, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: "Ок", style: .cancel)
+        alert.addAction(okAlert)
+        present(alert, animated: true)
     }
     
     // MARK: Actions
