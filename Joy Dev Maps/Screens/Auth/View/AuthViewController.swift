@@ -112,6 +112,7 @@ final class AuthViewController: UIViewController {
         view.addSubview(errorLabel)
         view.addSubview(actionButton)
         addPolicyAgreement()
+        addRecognizer()
     }
     
     private func addPolicyAgreement() {
@@ -132,6 +133,11 @@ final class AuthViewController: UIViewController {
             policyAgreementStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: AuthConstants.PolicyAgreement.leftRightInsets),
             policyAgreementStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.PolicyAgreement.leftRightInsets)
         ])
+    }
+    
+    private func addRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     // MARK: Binding
@@ -203,6 +209,11 @@ final class AuthViewController: UIViewController {
             let password = (authParamsTableView.visibleCells[1] as? AuthCell)?.textField.text ?? ""
             viewModel.login(with: login, and: password)
         }
+    }
+    
+    @objc
+    private func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
