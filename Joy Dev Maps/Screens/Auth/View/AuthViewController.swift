@@ -10,13 +10,22 @@ import UIKit
 final class AuthViewController: UIViewController {
     
     // MARK: UI
-    
+
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: AuthConstants.Logo.imageName)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    private lazy var segmentedControl: UISegmentedControl = {
+        let items = AuthState.allCases.map({ String($0.title) })
+        let segmentControl = UISegmentedControl(items: items)
+        segmentControl.selectedSegmentIndex = 0
+        segmentControl.addTarget(self, action: #selector(segmentControlValueChanged), for: .valueChanged)
+        segmentControl.translatesAutoresizingMaskIntoConstraints = false
+        return segmentControl
     }()
     
     private lazy var authParamsTableView: UITableView = {
@@ -29,22 +38,44 @@ final class AuthViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var policyAgreementLabel: UILabel = {
+        let label = UILabel()
+        label.text = AuthConstants.PolicyAgreement.text
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var policyAgreementSwitch: UISwitch = {
+        let toogler = UISwitch()
+        toogler.addTarget(self, action: #selector(policyAgreementSwitchValueChanged), for: .valueChanged)
+        toogler.translatesAutoresizingMaskIntoConstraints = false
+        return toogler
+    }()
+    
+    private lazy var policyAgreementStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [policyAgreementLabel, policyAgreementSwitch])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     private lazy var errorLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .systemRed
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var loginButton: UIButton = {
+    private lazy var actionButton: UIButton = {
         var configuration = UIButton.Configuration.tinted()
         configuration.baseBackgroundColor = .systemGreen
         configuration.baseForegroundColor = .systemGreen
         configuration.buttonSize = .large
-        configuration.title = AuthConstants.LoginButton.text
+        configuration.title = AuthConstants.Button.regText
         let button = UIButton(configuration: configuration)
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+        button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -76,9 +107,31 @@ final class AuthViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .systemBackground
         view.addSubview(logoImageView)
+        view.addSubview(segmentedControl)
         view.addSubview(authParamsTableView)
         view.addSubview(errorLabel)
-        view.addSubview(loginButton)
+        view.addSubview(actionButton)
+        addPolicyAgreement()
+    }
+    
+    private func addPolicyAgreement() {
+        view.addSubview(policyAgreementStackView)
+        
+        NSLayoutConstraint.activate([
+            policyAgreementStackView.topAnchor.constraint(equalTo: authParamsTableView.bottomAnchor, constant: AuthConstants.PolicyAgreement.topInset),
+            policyAgreementStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: AuthConstants.PolicyAgreement.leftRightInsets),
+            policyAgreementStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.PolicyAgreement.leftRightInsets)
+        ])
+    }
+    
+    private func removePolicyAgreement() {
+        policyAgreementStackView.removeFromSuperview()
+        
+        NSLayoutConstraint.deactivate([
+            policyAgreementStackView.topAnchor.constraint(equalTo: authParamsTableView.bottomAnchor, constant: AuthConstants.PolicyAgreement.topInset),
+            policyAgreementStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: AuthConstants.PolicyAgreement.leftRightInsets),
+            policyAgreementStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.PolicyAgreement.leftRightInsets)
+        ])
     }
     
     // MARK: Binding
@@ -87,15 +140,67 @@ final class AuthViewController: UIViewController {
         viewModel.errorText.bind { [weak self] text in
             self?.errorLabel.text = text
         }
+        
+        viewModel.isValidRegForm.bind { [weak self] isValid in
+            guard let self else { return }
+            actionButton.isEnabled = self.policyAgreementSwitch.isOn && isValid ? true : false
+        }
+        
+        viewModel.isSuccessCheckLoginForm.bind { [weak self] isSuccess in
+            self?.actionButton.isEnabled = isSuccess
+        }
     }
     
     // MARK: Actions
     
     @objc
-    private func loginButtonTapped() {
-        let currentLogin = (authParamsTableView.visibleCells[0] as? AuthCell)?.textField.text ?? ""
-        let currentPassword = (authParamsTableView.visibleCells[1] as? AuthCell)?.textField.text ?? ""
-        viewModel.loginButtonTapped(login: currentLogin, password: currentPassword)
+    private func segmentControlValueChanged() {
+        authParamsTableView.reloadData()
+        guard let state = AuthState(rawValue: segmentedControl.selectedSegmentIndex) else { return }
+        switch state {
+        case .registration:
+            addPolicyAgreement()
+            actionButton.setTitle(AuthConstants.Button.regText, for: .normal)
+        case .login:
+            removePolicyAgreement()
+            actionButton.setTitle(AuthConstants.Button.loginText, for: .normal)
+        }
+    }
+    
+    @objc
+    private func policyAgreementSwitchValueChanged() {
+        actionButton.isEnabled = self.policyAgreementSwitch.isOn && viewModel.isValidRegForm.value ? true : false
+    }
+    
+    @objc
+    private func actionButtonTapped() {
+        guard let state = AuthState(rawValue: segmentedControl.selectedSegmentIndex) else { return }
+        switch state {
+        case .registration:
+            let login = (authParamsTableView.visibleCells[0] as? AuthCell)?.textField.text ?? ""
+            let email = (authParamsTableView.visibleCells[1] as? AuthCell)?.textField.text ?? ""
+            let password = (authParamsTableView.visibleCells[2] as? AuthCell)?.textField.text ?? ""
+            let user = User(login: login, email: email, password: password)
+            viewModel.saveUser(user)
+            cleanForm()
+            showSuccessAlert()
+        case .login:
+            let login = (authParamsTableView.visibleCells[0] as? AuthCell)?.textField.text ?? ""
+            let password = (authParamsTableView.visibleCells[1] as? AuthCell)?.textField.text ?? ""
+            viewModel.login(with: login, and: password)
+        }
+    }
+    
+    private func showSuccessAlert() {
+        let alert = UIAlertController(title: "Успешная регистрация", message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    private func cleanForm() {
+        authParamsTableView.visibleCells.forEach({ ($0 as? AuthCell)?.textField.text = "" })
+        policyAgreementSwitch.setOn(false, animated: true)
     }
 }
 
@@ -103,12 +208,15 @@ final class AuthViewController: UIViewController {
 
 extension AuthViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfRows()
+        guard let state = AuthState(rawValue: segmentedControl.selectedSegmentIndex) else { return 0 }
+        return viewModel.numberOfRows(with: state)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let state = AuthState(rawValue: segmentedControl.selectedSegmentIndex) else { return UITableViewCell() }
         let cell: AuthCell = tableView.dequeueReusableCell()
-        cell.configure(with: viewModel.parameterForRowAt(indexPath: indexPath))
+        let parameter = viewModel.parameterForRowAt(indexPath: indexPath, with: state)
+        cell.configure(with: parameter)
         cell.textField.tag = indexPath.row
         cell.textField.delegate = self
         return cell
@@ -125,9 +233,9 @@ extension AuthViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.separatorInset = UIEdgeInsets(
             top: 0,
-            left: AuthConstants.TableView.leftRigthInsets,
+            left: AuthConstants.TableView.leftRightInsets,
             bottom: 0,
-            right: AuthConstants.TableView.leftRigthInsets
+            right: AuthConstants.TableView.leftRightInsets
         )
     }
 }
@@ -147,6 +255,24 @@ extension AuthViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         errorLabel.text = ""
+        
+        guard let state = AuthState(rawValue: segmentedControl.selectedSegmentIndex) else { return }
+        switch state {
+        case .registration:
+            let login = (authParamsTableView.visibleCells[0] as? AuthCell)?.textField.text ?? ""
+            let email = (authParamsTableView.visibleCells[1] as? AuthCell)?.textField.text ?? ""
+            let password = (authParamsTableView.visibleCells[2] as? AuthCell)?.textField.text ?? ""
+            let repeatedPassword = (authParamsTableView.visibleCells[3] as? AuthCell)?.textField.text ?? ""
+            if !login.isEmpty && !email.isEmpty && !password.isEmpty && !repeatedPassword.isEmpty {
+                viewModel.validateRegForm(login: login, email: email, password: password, repeatedPassword: repeatedPassword)
+            }
+        case .login:
+            let login = (authParamsTableView.visibleCells[0] as? AuthCell)?.textField.text ?? ""
+            let password = (authParamsTableView.visibleCells[1] as? AuthCell)?.textField.text ?? ""
+            if !login.isEmpty && !password.isEmpty {
+                viewModel.check(login: login, password: password)
+            }
+        }
     }
 }
 
@@ -160,18 +286,26 @@ private extension AuthViewController {
             logoImageView.widthAnchor.constraint(equalToConstant: AuthConstants.Logo.widthHeight),
             logoImageView.heightAnchor.constraint(equalToConstant: AuthConstants.Logo.widthHeight),
             
-            authParamsTableView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: AuthConstants.TableView.topInset),
+            segmentedControl.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: AuthConstants.Menu.topInset),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: AuthConstants.Menu.leftRightInsets),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.Menu.leftRightInsets),
+            
+            authParamsTableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: AuthConstants.TableView.topInset),
             authParamsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             authParamsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            authParamsTableView.heightAnchor.constraint(equalToConstant: AuthConstants.TableView.cellHeight * CGFloat(AuthParameters.allCases.count)),
+            authParamsTableView.heightAnchor.constraint(equalToConstant: AuthConstants.TableView.cellHeight * CGFloat(RegParameters.allCases.count)),
             
-            errorLabel.topAnchor.constraint(equalTo: authParamsTableView.bottomAnchor, constant: AuthConstants.Error.topInset),
+            errorLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -AuthConstants.Error.bottomInset),
             errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: AuthConstants.Error.leftRigthInsets),
             errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.Error.leftRigthInsets),
             
-            loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -AuthConstants.LoginButton.bottomInset),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: AuthConstants.LoginButton.leftRightInsets),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.LoginButton.leftRightInsets)
+            actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -AuthConstants.Button.bottomInset),
+            actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: AuthConstants.Button.leftRightInsets),
+            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.Button.leftRightInsets)
         ])
     }
+}
+
+#Preview {
+    ScreenAssembly.shared.makeAuthScreen()
 }

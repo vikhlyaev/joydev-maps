@@ -44,10 +44,25 @@ final class AuthCell: UITableViewCell, ReuseIdentifying {
     
     // MARK: Configure
     
-    func configure(with param: AuthParameters) {
+    func configure(with param: Parameters) {
         textField.placeholder = param.placeholder
-        if param == .password {
-            textField.isSecureTextEntry = true
+        if param is AuthParameters {
+            guard let authParam = param as? AuthParameters else { return }
+            if authParam == .password {
+                textField.textContentType = .oneTimeCode
+                textField.isSecureTextEntry = true
+            } else {
+                textField.isSecureTextEntry = false
+            }
+        }
+        if param is RegParameters {
+            guard let regParam = param as? RegParameters else { return }
+            if regParam == .password || regParam == .repeatedPassword {
+                textField.textContentType = .oneTimeCode
+                textField.isSecureTextEntry = true
+            } else {
+                textField.isSecureTextEntry = false
+            }
         }
     }
 }
