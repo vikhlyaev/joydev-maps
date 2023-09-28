@@ -36,7 +36,11 @@ final class ScreenAssembly {
     // MARK: ScreenAssembly
     
     func makeFavoritesScreen() -> UIViewController {
-        let viewModel = FavoritesViewModel(favoritesService: favoritesService)
+        let viewModel = FavoritesViewModel(
+            favoritesService: favoritesService,
+            lastLocationService: lastLocationService,
+            authService: authService
+        )
         let vc = FavoritesViewController(viewModel: viewModel)
         return vc
     }
