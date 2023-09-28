@@ -151,6 +151,20 @@ final class AuthViewController: UIViewController {
         }
     }
     
+    // MARK: Private functions
+    
+    private func showSuccessAlert() {
+        let alert = UIAlertController(title: "Успешная регистрация", message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    private func cleanForm() {
+        authParamsTableView.visibleCells.forEach({ ($0 as? AuthCell)?.textField.text = "" })
+        policyAgreementSwitch.setOn(false, animated: true)
+    }
+    
     // MARK: Actions
     
     @objc
@@ -189,18 +203,6 @@ final class AuthViewController: UIViewController {
             let password = (authParamsTableView.visibleCells[1] as? AuthCell)?.textField.text ?? ""
             viewModel.login(with: login, and: password)
         }
-    }
-    
-    private func showSuccessAlert() {
-        let alert = UIAlertController(title: "Успешная регистрация", message: nil, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
-    
-    private func cleanForm() {
-        authParamsTableView.visibleCells.forEach({ ($0 as? AuthCell)?.textField.text = "" })
-        policyAgreementSwitch.setOn(false, animated: true)
     }
 }
 
@@ -255,7 +257,6 @@ extension AuthViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         errorLabel.text = ""
-        
         guard let state = AuthState(rawValue: segmentedControl.selectedSegmentIndex) else { return }
         switch state {
         case .registration:
@@ -304,8 +305,4 @@ private extension AuthViewController {
             actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AuthConstants.Button.leftRightInsets)
         ])
     }
-}
-
-#Preview {
-    ScreenAssembly.shared.makeAuthScreen()
 }

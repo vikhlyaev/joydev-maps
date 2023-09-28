@@ -45,7 +45,7 @@ final class AuthViewModel: AuthOutput {
         currentUser = authService.loadUser()
     }
 
-    // MARK: Functions
+    // MARK: Private functions
     
     private func openMapScreen() {
         let tabBarController = TabBarController()
@@ -78,12 +78,10 @@ final class AuthViewModel: AuthOutput {
         let isValidEmail = validationService.isValidEmail(email)
         let isValidPassword = validationService.isValidPassword(password)
         let isValidRepeatedPassword = password == repeatedPassword
-        
         if !isValidLogin { errorText.value = AuthConstants.Error.nameIncorrect }
         if !isValidEmail { errorText.value = AuthConstants.Error.emailIncorrect }
         if !isValidPassword { errorText.value = AuthConstants.Error.passwordIncorrect }
         if !isValidRepeatedPassword { errorText.value = AuthConstants.Error.repeatPasswordIncorrect }
-        
         isValidRegForm.value = isValidLogin && isValidEmail && isValidPassword && isValidRepeatedPassword
     }
     
