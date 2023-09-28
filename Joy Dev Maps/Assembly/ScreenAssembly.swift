@@ -59,8 +59,7 @@ final class ScreenAssembly {
     }
     
     func makePlaceDetailsScreen(with place: Place) -> UIViewController {
-        let favoritesService = FavoritesServiceImpl()
-        let viewModel = PlaceDetailsViewModel(place: place, favoritesService: favoritesService)
+        let viewModel = PlaceDetailsViewModel(place: place, favoritesService: favoritesService, placeService: placeService)
         let vc = PlaceDetailsViewController(viewModel: viewModel)
         return vc
     }
